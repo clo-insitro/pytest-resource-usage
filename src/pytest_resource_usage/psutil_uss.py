@@ -111,9 +111,9 @@ def pytest_runtest_call(item):
     When automatic garbage collection is enabled, we ensured that
     garbage is collected before the test is started.
     """
-    if MARKER_NAME not in item.keywords:
-        yield
-        return
+    # if MARKER_NAME not in item.keywords:
+    #     yield
+    #     return
     for marker in item.iter_markers(MARKER_NAME):
         try:
             interval = marker.kwargs["interval"]
