@@ -26,9 +26,9 @@ def pytest_runtest_call(item):
     finished only if memory allocations were not being traced already
     before the test is run.
     """
-    if MARKER_NAME not in item.keywords:
-        yield
-        return
+    # if MARKER_NAME not in item.keywords:
+    #     yield
+    #     return
 
     if tracemalloc.is_tracing():
         tracemalloc_started = False
